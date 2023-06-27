@@ -43,8 +43,10 @@ class OnBoardingScreen extends StatelessWidget {
   }
 
   InkWell skipButton() {
+    AppServices services = Get.find();
     return InkWell(
       onTap: () {
+        services.sharedPreferences.setBool('onBoard', true);
         Get.offAllNamed('/login');
       },
       child: Text(
@@ -59,11 +61,11 @@ class OnBoardingScreen extends StatelessWidget {
   }
 
   InkWell continueButton(PageController pageController, int currentPage) {
-    SharedPrefServices services = Get.put(SharedPrefServices());
+    AppServices services = Get.put(AppServices());
     return InkWell(
       onTap: () {
         if (currentPage == onBoardingList.length - 1) {
-          services.sharedPreferences.setBool('onBoard', false);
+          services.sharedPreferences.setBool('onBoard', true);
           Get.offAllNamed('/login');
         } else {
           pageController.nextPage(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopapp/binding.dart';
 import 'package:shopapp/core/localization/change_local.dart';
 import 'package:shopapp/core/localization/translation.dart';
 import 'package:shopapp/core/services/services.dart';
 import 'package:shopapp/routes.dart';
-import 'package:shopapp/test.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,12 +21,13 @@ class MyApp extends StatelessWidget {
     LocaleController localController = Get.put(LocaleController());
     return GetMaterialApp(
       translations: AppLanguges(),
-      home: const TestScreen(),
+      // home: const TestScreen(),
       locale: localController.language,
       debugShowCheckedModeBanner: false,
       getPages: routes,
-      // theme: langController.appTheme,
-      // initialBinding: AppBinding(),
+      theme: localController.appTheme,
+      initialBinding: MyBinding(),
+      
     );
   }
 }

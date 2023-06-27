@@ -5,7 +5,7 @@ import 'package:shopapp/core/services/services.dart';
 
 class LocaleController extends GetxController {
   Locale? language;
-  SharedPrefServices services = Get.find();
+  AppServices services = Get.find();
   late ThemeData appTheme;
   changeLang(String languageCode) {
     Locale locale = Locale(languageCode);

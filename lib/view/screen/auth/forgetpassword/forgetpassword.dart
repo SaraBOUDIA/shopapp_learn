@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopapp/controller/auth/forgetpassword_controller.dart';
 import 'package:shopapp/core/constant/color.dart';
+import 'package:shopapp/core/functions/validinput.dart';
 import 'package:shopapp/view/widget/auth/custombuttonauth.dart';
 import 'package:shopapp/view/widget/auth/customtextbodyauth.dart';
 import 'package:shopapp/view/widget/auth/customtextformauth.dart';
@@ -41,7 +41,7 @@ class ForgetPassword extends StatelessWidget {
             CustomTextFormAuth(
               isNumber: false,
               valid: (val) {
-                return null;
+                return validInput(val!, 12, 100, 'email');
               },
               mycontroller: controller.email,
               hinttext: "12".tr,

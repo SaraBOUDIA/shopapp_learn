@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shopapp/core/constant/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -18,10 +19,12 @@ class SignUpControllerImp extends SignUpController {
   @override
   signUp() {
     if (formstate.currentState!.validate()) {
+      FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email.text,
+        password: password.text,
+      );
       Get.offNamed(AppRoute.verfiyCodeSignUp);
-      Get.delete<SignUpControllerImp>();
-    } else {
-    }
+    } else {}
   }
 
   @override
