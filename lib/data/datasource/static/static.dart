@@ -10,3 +10,5 @@ List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
       title: 'Screen 3', image: 'assets/images/splash_3.png', body: 'Desc ...'),
 ];
+
+late String uId;

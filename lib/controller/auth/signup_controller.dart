@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shopapp/core/constant/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:shopapp/data/model/user_model.dart';
 
 abstract class SignUpController extends GetxController {
   signUp();
@@ -19,11 +21,28 @@ class SignUpControllerImp extends SignUpController {
   @override
   signUp() {
     if (formstate.currentState!.validate()) {
-      FirebaseAuth.instance.createUserWithEmailAndPassword(
+      Get.toNamed(AppRoute.loading);
+      FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
         email: email.text,
         password: password.text,
+      )
+          .then((value) {
+        FirebaseFirestore.instance
+            .collection('users')
+            .doc(value.user?.uid)
+            .set(UserModel(
+              email: email.text,
+              name: username.text,
+              phone: phone.text,
+              uId: value.user?.uid,
+            ).toMap());
+        Get.offAllNamed(AppRoute.successSignUp);
+      }).onError(
+        (error, stackTrace) {
+          Get.offNamed(AppRoute.signUp);
+        },
       );
-      Get.offNamed(AppRoute.verfiyCodeSignUp);
     } else {}
   }
 

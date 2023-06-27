@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shopapp/controller/auth/successsignup_controller.dart';
 import 'package:shopapp/core/constant/color.dart';
 import 'package:shopapp/view/widget/auth/custombuttonauth.dart';
@@ -26,12 +26,10 @@ class SuccessSignUp extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.all(15),
         child: Column(children: [
-          const Center(
-              child: Icon(
-            Icons.check_circle_outline,
-            size: 200,
-            color: AppColor.primaryColor,
-          )),
+          Center(
+            child: Lottie.network(
+                'https://assets6.lottiefiles.com/packages/lf20_zvfd42i0.json'),
+          ),
           Text("37".tr,
               style: Theme.of(context)
                   .textTheme

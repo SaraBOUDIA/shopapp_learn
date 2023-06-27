@@ -1,5 +1,6 @@
 import 'package:shopapp/core/constant/routes.dart';
 import 'package:shopapp/core/middleware/middleware.dart';
+import 'package:shopapp/view/screen/auth/loading_screen.dart';
 import 'package:shopapp/view/screen/auth/login.dart';
 import 'package:shopapp/view/screen/auth/signup.dart';
 import 'package:shopapp/view/screen/language.dart';
@@ -19,6 +20,7 @@ List<GetPage<dynamic>>? routes = [
     page: () => const LanguageScreen(),
     middlewares: [AppMiddleware()],
   ),
+  GetPage(name: AppRoute.loading, page: () => const LoadingScreen()),
   GetPage(name: AppRoute.login, page: () => const Login()),
   GetPage(name: AppRoute.signUp, page: () => const SignUp()),
   GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),

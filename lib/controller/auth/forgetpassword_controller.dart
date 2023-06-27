@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shopapp/core/constant/routes.dart';
@@ -17,9 +18,11 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
   @override
   goToVerfiyCode() {
     if (formstate.currentState!.validate()) {
-      Get.offNamed(AppRoute.verfiyCode);
-    } else {
-    }
+      FirebaseAuth.instance.sendPasswordResetEmail(email: email.text).then((value) {
+         Get.offNamed(AppRoute.verfiyCode);
+      });
+     
+    } else {}
   }
 
   @override
