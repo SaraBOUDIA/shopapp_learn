@@ -18,10 +18,12 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
   @override
   goToVerfiyCode() {
     if (formstate.currentState!.validate()) {
-      FirebaseAuth.instance.sendPasswordResetEmail(email: email.text).then((value) {
-         Get.offNamed(AppRoute.verfiyCode);
+      FirebaseAuth.instance
+          .sendPasswordResetEmail(email: email.text)
+          .then((value) {
+        Get.offNamed(AppRoute.verfiyCode);
+        
       });
-     
     } else {}
   }
 

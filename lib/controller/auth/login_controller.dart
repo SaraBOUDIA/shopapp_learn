@@ -18,12 +18,12 @@ class LoginControllerImp extends LoginController {
   late TextEditingController email;
   late TextEditingController password;
   AppServices services = Get.find();
-  final UserControllerImp _userControllerImp = Get.find();
+  final UserControllerImp _userControllerImp =
+      Get.put(UserControllerImp(), permanent: true);
   @override
   login() {
     var formdata = formstate.currentState;
     if (formdata!.validate()) {
-      
       FirebaseAuth.instance
           .signInWithEmailAndPassword(
               email: email.text, password: password.text)
