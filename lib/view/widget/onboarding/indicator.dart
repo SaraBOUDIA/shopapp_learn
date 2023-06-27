@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:shopapp/controller/onboard_controller.dart';
-import 'package:shopapp/core/constant/colors.dart';
+import 'package:shopapp/core/constant/color.dart';
 import 'package:shopapp/core/functions/dimensions.dart';
 
 Row indicatorList(OnBoardController controller) {

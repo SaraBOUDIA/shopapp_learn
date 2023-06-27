@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopapp/controller/onboard_controller.dart';
-import 'package:shopapp/core/constant/colors.dart';
+import 'package:shopapp/core/constant/color.dart';
 import 'package:shopapp/core/functions/dimensions.dart';
+import 'package:shopapp/core/services/services.dart';
 import 'package:shopapp/data/datasource/static/static.dart';
 import 'package:shopapp/view/widget/onboarding/indicator.dart';
 import 'package:shopapp/view/widget/onboarding/onboarding_item.dart';
@@ -59,10 +59,11 @@ class OnBoardingScreen extends StatelessWidget {
   }
 
   InkWell continueButton(PageController pageController, int currentPage) {
+    SharedPrefServices services = Get.put(SharedPrefServices());
     return InkWell(
       onTap: () {
         if (currentPage == onBoardingList.length - 1) {
-          services.sharedPreference.setBool('onBoard', false);
+          services.sharedPreferences.setBool('onBoard', false);
           Get.offAllNamed('/login');
         } else {
           pageController.nextPage(

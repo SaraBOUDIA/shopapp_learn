@@ -1,8 +1,8 @@
 // ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shopapp/core/constant/colors.dart';
-import 'package:shopapp/core/constant/routes_name.dart';
+import 'package:shopapp/core/constant/color.dart';
+import 'package:shopapp/core/constant/routes.dart';
 import 'package:shopapp/core/functions/dimensions.dart';
 import 'package:shopapp/core/localization/change_local.dart';
 

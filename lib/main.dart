@@ -4,6 +4,7 @@ import 'package:shopapp/core/localization/change_local.dart';
 import 'package:shopapp/core/localization/translation.dart';
 import 'package:shopapp/core/services/services.dart';
 import 'package:shopapp/routes.dart';
+import 'package:shopapp/test.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
     LocaleController localController = Get.put(LocaleController());
     return GetMaterialApp(
       translations: AppLanguges(),
+      home: const TestScreen(),
       locale: localController.language,
       debugShowCheckedModeBanner: false,
       getPages: routes,
