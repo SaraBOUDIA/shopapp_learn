@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/core/constant/color.dart';
-import 'package:shopapp/core/functions/check_net.dart';
-import 'package:shopapp/core/functions/dimensions.dart';
+import 'package:lottie/lottie.dart';
+
 
 class TestScreen extends StatefulWidget {
   const TestScreen({super.key});
@@ -11,25 +10,11 @@ class TestScreen extends StatefulWidget {
 }
 
 class _TestScreenState extends State<TestScreen> {
-  Future<bool?>? res;
-  initialData() async {
-    res = checkInternet();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-          color: AppColor.primaryColor,
-          padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
-          child: MaterialButton(
-            onPressed: () async {
-              await initialData();
-            },
-            child: const Text('Arabic'),
-          ),
-        ),
+        child: Lottie.asset('assets/lottie/94060-no-results-found.json'),
       ),
     );
   }

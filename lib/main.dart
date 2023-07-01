@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    
     LocaleController localController = Get.put(LocaleController());
     return GetMaterialApp(
       translations: AppLanguges(),
@@ -27,7 +28,6 @@ class MyApp extends StatelessWidget {
       getPages: routes,
       theme: localController.appTheme,
       initialBinding: MyBinding(),
-      
     );
   }
 }

@@ -6,6 +6,16 @@ validInput(String val, int min, int max, String type) {
       return "not valid username";
     }
   }
+  // if (type == "product") {
+  //   if (!GetUtils.isAlphabetOnly(val)) {
+  //     return "not valid product name";
+  //   }
+  // }
+  if (type == 'price') {
+    if (!GetUtils.isNum(val.trim())) {
+      return 'not valid price';
+    }
+  }
   if (type == "email") {
     if (!GetUtils.isEmail(val)) {
       return "not valid email";

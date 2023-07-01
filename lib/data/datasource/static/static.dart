@@ -1,4 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:shopapp/data/model/onboardin_model.dart';
+import 'package:shopapp/view/screen/home/card_screen.dart';
+import 'package:shopapp/view/screen/home/favourite_screen.dart';
+import 'package:shopapp/view/screen/home/feeds_screen.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
@@ -11,4 +15,8 @@ List<OnBoardingModel> onBoardingList = [
       title: 'Screen 3', image: 'assets/images/splash_3.png', body: 'Desc ...'),
 ];
 
-late String uId;
+List<Widget> homeScreens = [
+  const FeedsScreen(),
+  const Favourite(),
+  const CardPage(),
+];

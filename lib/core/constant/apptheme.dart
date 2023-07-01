@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shopapp/core/constant/color.dart';
 
 ThemeData englishTheme = ThemeData(
-  fontFamily: "PlayfairDisplay",
+  fontFamily: "Muli",
+  appBarTheme: const AppBarTheme(
+    backgroundColor: AppColor.primaryColor,
+  ),
   textTheme: const TextTheme(
       displayLarge: TextStyle(
           fontWeight: FontWeight.bold, fontSize: 22, color: AppColor.black),
@@ -14,7 +17,7 @@ ThemeData englishTheme = ThemeData(
           fontWeight: FontWeight.bold,
           fontSize: 14),
       bodyMedium: TextStyle(height: 2, color: AppColor.grey, fontSize: 14)),
-  primarySwatch: Colors.blue,
+  primarySwatch: Colors.deepOrange,
 );
 
 ThemeData arabicTheme = ThemeData(

@@ -1,36 +1,26 @@
-import 'package:shopapp/core/constant/routes.dart';
-import 'package:shopapp/core/middleware/middleware.dart';
-import 'package:shopapp/view/screen/auth/loading_screen.dart';
-import 'package:shopapp/view/screen/auth/login.dart';
-import 'package:shopapp/view/screen/auth/signup.dart';
-import 'package:shopapp/view/screen/language.dart';
-import 'package:shopapp/view/screen/onboardin_screen.dart';
-import 'view/screen/auth/forgetpassword/forgetpassword.dart';
-import 'view/screen/auth/forgetpassword/resetpassword.dart';
-import 'view/screen/auth/forgetpassword/success_resetpassword.dart';
-import 'view/screen/auth/forgetpassword/verifycode.dart';
-import 'view/screen/auth/success_signup.dart';
-import 'view/screen/auth/verifycodesignup.dart';
-
 import 'package:get/get.dart';
+import 'package:shopapp/core/constant/routes.dart';
+import 'package:shopapp/view/screen/dashboard/dashboard_home.dart';
+import 'package:shopapp/view/screen/home_screen.dart';
+import 'package:shopapp/view/screen/search_screen.dart';
 
 List<GetPage<dynamic>>? routes = [
   GetPage(
-    name: "/",
-    page: () => const LanguageScreen(),
-    middlewares: [AppMiddleware()],
+    name: '/',
+    page: (() => const HomeScreen()),
   ),
-  GetPage(name: AppRoute.loading, page: () => const LoadingScreen()),
-  GetPage(name: AppRoute.login, page: () => const Login()),
-  GetPage(name: AppRoute.signUp, page: () => const SignUp()),
-  GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),
-  GetPage(name: AppRoute.verfiyCode, page: () => const VerfiyCode()),
-  GetPage(name: AppRoute.resetPassword, page: () => const ResetPassword()),
   GetPage(
-      name: AppRoute.successResetpassword,
-      page: () => const SuccessResetPassword()),
-  GetPage(name: AppRoute.successSignUp, page: () => const SuccessSignUp()),
-  GetPage(name: AppRoute.onBoarding, page: () => const OnBoardingScreen()),
+    name: AppRoute.search,
+    page: () => const SearchScreen(),
+  ),
+  // GetPage(
+
+  //   arguments: [],
+  //   name: AppRoute.edit,
+  //   page: () =>  EditItemScreen(product: pr,),
+  // ),
   GetPage(
-      name: AppRoute.verfiyCodeSignUp, page: () => const VerfiyCodeSignUp()),
+    name: AppRoute.dashBoard,
+    page: () => const DashboardHome(),
+  )
 ];
