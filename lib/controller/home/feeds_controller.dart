@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopapp/core/class/db_helper.dart';
 import 'package:shopapp/core/functions/add_favcard.dart';
 import 'package:shopapp/data/datasource/products/card_items.dart';
 import 'package:shopapp/data/datasource/products/search_results.dart';
@@ -49,6 +50,7 @@ class FeedsControllerImp extends FeedsController {
   @override
   plus(ProductModel product) {
     product.quantity += 1;
+    DbHelper.dbHelper.updateProduct(product: product);
     update();
   }
 
@@ -56,6 +58,7 @@ class FeedsControllerImp extends FeedsController {
   minus(ProductModel product) {
     if (product.quantity > 1) {
       product.quantity -= 1;
+      DbHelper.dbHelper.updateProduct(product: product);
       update();
     }
   }

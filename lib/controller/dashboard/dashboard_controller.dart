@@ -111,8 +111,14 @@ class EditItemController extends DashboardController {
     );
     products.add(editedProduct);
     products.remove(product);
-    topProduts.add(editedProduct);
-    topProduts.remove(product);
+    if (product.isTop && !isTop) {
+      topProduts.remove(product);
+    }
+    if (!product.isTop && isTop) {
+      topProduts.add(editedProduct);
+      topProduts.remove(product);
+    }
+
     if (product.isFavourite) {
       favProducts.add(editedProduct);
       favProducts.remove(product);
